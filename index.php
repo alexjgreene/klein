@@ -19,5 +19,9 @@ $klein->respond(
 	require('pages/main.php')
 );
 
+$klein->app()->register('db', function () {
+    $params = require('db.php');
+    return new PDO($params['connection'], $params['username'], $params['password']);
+});
 
 $klein->dispatch();
