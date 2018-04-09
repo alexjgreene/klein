@@ -15,6 +15,12 @@ $klein->respond(
 
 $klein->respond(
 	'GET',
+	'/hello-world/[:id]',
+	require('pages/user.php')
+);
+
+$klein->respond(
+	'GET',
 	'/',
 	require('pages/main.php')
 );
